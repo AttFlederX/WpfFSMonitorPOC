@@ -1,0 +1,60 @@
+﻿<Window x:Class="WpfFSMonitorPOC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFSMonitorPOC"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Margin="15"
+               Content="Monitored directory: " />
+
+        <TextBox x:Name="dirPathTextBox"
+                 Grid.Row="0"
+                 Grid.Column="1"
+                 HorizontalAlignment="Stretch"
+                 Margin="0, 15" />
+
+        <Button x:Name="browseButton"
+                Grid.Row="0"
+                Grid.Column="2"
+                Width="75"
+                Margin="15, 15"
+                Content="Browse"
+                Click="browseButton_Click" />
+
+        <Button x:Name="monitorButton"
+                Grid.Row="0"
+                Grid.Column="3"
+                Width="100"
+                Margin="15, 15"
+                Content="Start monitoring"
+                Click="monitorButton_Click" />
+
+        <TextBox x:Name="outputTextBox"
+                 Grid.Row="1"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="4"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch"
+                 Margin="15, 0, 15, 15"
+                 IsReadOnly="True" />
+    </Grid>
+</Window>
